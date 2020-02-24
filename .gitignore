@@ -1,0 +1,4 @@
+objs/
+fdf
+/cmake-build-debug/
+.idea/

@@ -1,0 +1,6 @@
+[submodule "libft"]
+	path = libft
+	url = http://github.com/creew/libft
+[submodule "ft_printf"]
+	path = ft_printf
+	url = http://github.com/creew/ft_printf
