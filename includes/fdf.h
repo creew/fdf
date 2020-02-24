@@ -31,6 +31,9 @@
 # define BROWN_COLOR		(0x964B00)
 
 # ifdef __APPLE__
+#  define LEFT_MB			(1)
+#  define RIGHT_MB			(2)
+
 #  define KEYPRESS			(2)
 #  define KEYRELEASE		(3)
 #  define BUTTONPRESS		(4)
@@ -75,6 +78,9 @@
 #  define WND_HEIGHT		(800)
 # elif __linux__
 #  include <X11/Xlib.h>
+#  define LEFT_MB			(1)
+#  define RIGHT_MB			(3)
+
 #  define KEYPRESS			(KeyPress)
 #  define KEYRELEASE		(KeyRelease)
 #  define BUTTONPRESS		(ButtonPress)

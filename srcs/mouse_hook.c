@@ -43,15 +43,15 @@ int			button_released(int button, int x, int y, void *param)
 	set_key_released(&fdf->mouse_keys, button, x, y);
 	if (x >= 0 && y >= 0 && x < fdf->wnd_width && y < fdf->wnd_height)
 	{
-		if (button == 1)
+		if (button == LEFT_MB)
 		{
-			get_key_diff(&fdf->mouse_keys, 1, &diffx, &diffy);
+			get_key_diff(&fdf->mouse_keys, LEFT_MB, &diffx, &diffy);
 			add_rotate(fdf, diffy / 10, diffy / 10, diffx / 10);
 			set_rotate_add(fdf, 0, 0, 0);
 		}
-		else if (button == 2)
+		else if (button == RIGHT_MB)
 		{
-			get_key_diff(&fdf->mouse_keys, 2, &diffx, &diffy);
+			get_key_diff(&fdf->mouse_keys, RIGHT_MB, &diffx, &diffy);
 			add_shift(fdf, diffx, diffy);
 			set_shift_add(fdf, 0, 0);
 		}
@@ -71,15 +71,15 @@ int			mouse_move(int x, int y, void *param)
 	if (x >= 0 && y >= 0 && x < fdf->wnd_width && y < fdf->wnd_height)
 	{
 		set_current_xy(&fdf->mouse_keys, x, y);
-		if (is_key_pressed(&fdf->mouse_keys, 1))
+		if (is_key_pressed(&fdf->mouse_keys, LEFT_MB))
 		{
-			get_key_diff(&fdf->mouse_keys, 1, &diffx, &diffy);
+			get_key_diff(&fdf->mouse_keys, LEFT_MB, &diffx, &diffy);
 			set_rotate_add(fdf, diffy / 10, diffy / 10, diffx / 10);
 			redraw_image(fdf);
 		}
-		if (is_key_pressed(&fdf->mouse_keys, 2))
+		if (is_key_pressed(&fdf->mouse_keys, RIGHT_MB))
 		{
-			get_key_diff(&fdf->mouse_keys, 2, &diffx, &diffy);
+			get_key_diff(&fdf->mouse_keys, RIGHT_MB, &diffx, &diffy);
 			set_shift_add(fdf, diffx, diffy);
 			redraw_image(fdf);
 		}

@@ -14,9 +14,9 @@
 
 int		is_key_pressed(t_mousekeys *keys, int button)
 {
-	if (button == 1)
+	if (button == LEFT_MB)
 		return (keys->but1_pressed);
-	else if (button == 2)
+	else if (button == RIGHT_MB)
 		return (keys->but2_pressed);
 	return (0);
 }
@@ -29,13 +29,13 @@ void	set_current_xy(t_mousekeys *keys, int x, int y)
 
 void	set_key_pressed(t_mousekeys *keys, int button, int x, int y)
 {
-	if (button == 1)
+	if (button == LEFT_MB)
 	{
 		keys->but1_pressed = 1;
 		keys->press1_x = x;
 		keys->press1_y = y;
 	}
-	else if (button == 2)
+	else if (button == RIGHT_MB)
 	{
 		keys->but2_pressed = 1;
 		keys->press2_x = x;
@@ -46,11 +46,11 @@ void	set_key_pressed(t_mousekeys *keys, int button, int x, int y)
 
 void	set_key_released(t_mousekeys *keys, int button, int x, int y)
 {
-	if (button == 1)
+	if (button == LEFT_MB)
 	{
 		keys->but1_pressed = 0;
 	}
-	else if (button == 2)
+	else if (button == RIGHT_MB)
 	{
 		keys->but2_pressed = 0;
 	}
@@ -59,12 +59,12 @@ void	set_key_released(t_mousekeys *keys, int button, int x, int y)
 
 void	get_key_diff(t_mousekeys *keys, int button, int *x, int *y)
 {
-	if (button == 1)
+	if (button == LEFT_MB)
 	{
 		*x = keys->cur_x - keys->press1_x;
 		*y = keys->cur_y - keys->press1_y;
 	}
-	else if (button == 2)
+	else if (button == RIGHT_MB)
 	{
 		*x = keys->cur_x - keys->press2_x;
 		*y = keys->cur_y - keys->press2_y;
